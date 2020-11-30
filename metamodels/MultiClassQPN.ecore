@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MultiClassQPN" nsURI="MultiClassQPN" nsPrefix="MultiClassQPN">
+  <eClassifiers xsi:type="ecore:EClass" name="QPN">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="places" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Place" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" ordered="false"
+        upperBound="-1" eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arcs" ordered="false" upperBound="-1"
+        eType="#//Arc" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colors" upperBound="-1"
+        eType="#//Color" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceDemands" upperBound="-1"
+        eType="#//ServiceDemand" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modes" upperBound="-1"
+        eType="#//Mode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Place" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
+        upperBound="-1" eType="#//TransToPlaceArc" eOpposite="#//TransToPlaceArc/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" ordered="false"
+        upperBound="-1" eType="#//PlaceToTransArc" eOpposite="#//PlaceToTransArc/source"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numOfTokens" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" upperBound="-1"
+        eType="#//Color"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//PlaceToTransArc" eOpposite="#//PlaceToTransArc/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//TransToPlaceArc" eOpposite="#//TransToPlaceArc/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mode" upperBound="-1" eType="#//Mode"
+        eOpposite="#//Mode/transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arc"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PlaceToTransArc" eSuperTypes="#//Arc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="#//Place" eOpposite="#//Place/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="#//Transition" eOpposite="#//Transition/incoming"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransToPlaceArc" eSuperTypes="#//Arc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="#//Transition" eOpposite="#//Transition/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="#//Place" eOpposite="#//Place/incoming"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrdinaryPlace" eSuperTypes="#//Place"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QueueingPlace" eSuperTypes="#//Place">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schedulingPolicy" lowerBound="1"
+        eType="#//SchedulingPolicy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceDemand" upperBound="-1"
+        eType="#//ServiceDemand" eOpposite="#//ServiceDemand/queueingPlace"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceDistribution" eType="#//ProbabilityDistribution"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceParams" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SchedulingPolicy">
+    <eLiterals name="FCFS" value="1"/>
+    <eLiterals name="IS" value="2"/>
+    <eLiterals name="PS" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProbabilityDistribution">
+    <eLiterals name="Exponential" value="1"/>
+    <eLiterals name="Poisson" value="2"/>
+    <eLiterals name="Constant" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        eType="#//Transition" eOpposite="#//Transition/mode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" lowerBound="1" eType="#//Color"
+        eOpposite="#//Color/mode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceDemand">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceDistribution" lowerBound="1"
+        eType="#//ProbabilityDistribution"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceParams" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queueingPlace" lowerBound="1"
+        eType="#//QueueingPlace" eOpposite="#//QueueingPlace/serviceDemand"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" lowerBound="1" eType="#//Color"
+        eOpposite="#//Color/serviceDemand"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Color">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceDemand" upperBound="-1"
+        eType="#//ServiceDemand" eOpposite="#//ServiceDemand/color"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mode" upperBound="-1" eType="#//Mode"
+        eOpposite="#//Mode/color"/>
+  </eClassifiers>
+</ecore:EPackage>

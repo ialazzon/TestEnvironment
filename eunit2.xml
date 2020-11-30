@@ -1,0 +1,1386 @@
+<project default="run-tests">
+
+	<property name="metamodels.location" location="${basedir}/metamodels" />
+	<property name="MultiClassQN.metamodel.location" location="${metamodels.location}/MultiClassQN.ecore" />
+	<property name="MultiClassQPN.metamodel.location" location="${metamodels.location}/MultiClassQPN.ecore" />
+	<property name="MultiClassQPN.metamodel.uri" value="MultiClassQPN" />
+	<property name="MultiClassQN.metamodel.uri" value="MultiClassQN" />
+
+	<target name="run-tests">
+		<!--
+		 Note: when comparing models with EUnit, avoid using metamodelfile in the epsilon.emf.loadModel task!
+		 It will result in each model having a different EPackage instance, producing unwanted differences
+		 in assertEqualModels.
+		 -->
+		<epsilon.emf.register file="${MultiClassQN.metamodel.location}"/>
+		<epsilon.emf.register file="${MultiClassQPN.metamodel.location}"/>
+		
+		<epsilon.eunit src="tests/atl2.eunit">
+			<modelTasks>
+				<epsilon.emf.loadModel
+					name="MultiClassQN1" modelfile="models/QN1.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN1Expected" modelfile="models/QPN1Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+									name="MultiClassQN2" modelfile="models/QN2.model"
+									metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN2Expected" modelfile="models/QPN2Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN3" modelfile="models/QN3.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN3Expected" modelfile="models/QPN3Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN4" modelfile="models/QN4.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN4Expected" modelfile="models/QPN4Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN5" modelfile="models/QN5.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN5Expected" modelfile="models/QPN5Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN6" modelfile="models/QN6.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN6Expected" modelfile="models/QPN6Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN7" modelfile="models/QN7.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN7Expected" modelfile="models/QPN7Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN8" modelfile="models/QN8.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN8Expected" modelfile="models/QPN8Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN9" modelfile="models/QN9.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN9Expected" modelfile="models/QPN9Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN10" modelfile="models/QN10.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN10Expected" modelfile="models/QPN10Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN11" modelfile="models/QN11.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN11Expected" modelfile="models/QPN11Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN12" modelfile="models/QN12.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN12Expected" modelfile="models/QPN12Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN13" modelfile="models/QN13.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN13Expected" modelfile="models/QPN13Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN14" modelfile="models/QN14.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN14Expected" modelfile="models/QPN14Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN15" modelfile="models/QN15.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN15Expected" modelfile="models/QPN15Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN16" modelfile="models/QN16.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN16Expected" modelfile="models/QPN16Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN17" modelfile="models/QN17.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN17Expected" modelfile="models/QPN17Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN18" modelfile="models/QN18.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN18Expected" modelfile="models/QPN18Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN19" modelfile="models/QN19.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN19Expected" modelfile="models/QPN19Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN20" modelfile="models/QN20.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN20Expected" modelfile="models/QPN20Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN21" modelfile="models/QN21.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN21Expected" modelfile="models/QPN21Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN22" modelfile="models/QN22.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN22Expected" modelfile="models/QPN22Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN23" modelfile="models/QN23.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN23Expected" modelfile="models/QPN23Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN24" modelfile="models/QN24.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN24Expected" modelfile="models/QPN24Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN25" modelfile="models/QN25.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN25Expected" modelfile="models/QPN25Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN26" modelfile="models/QN26.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN26Expected" modelfile="models/QPN26Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN27" modelfile="models/QN27.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN27Expected" modelfile="models/QPN27Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN28" modelfile="models/QN28.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN28Expected" modelfile="models/QPN28Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN29" modelfile="models/QN29.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN29Expected" modelfile="models/QPN29Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN30" modelfile="models/QN30.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN30Expected" modelfile="models/QPN30Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN31" modelfile="models/QN31.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN31Expected" modelfile="models/QPN31Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN32" modelfile="models/QN32.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN32Expected" modelfile="models/QPN32Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN33" modelfile="models/QN33.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN33Expected" modelfile="models/QPN33Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				<epsilon.emf.loadModel
+					name="MultiClassQN34" modelfile="models/QN34.model"
+					metamodeluri="${MultiClassQN.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="QPN34Expected" modelfile="models/QPN34Expected.model"
+					metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+				
+				
+	
+			</modelTasks>
+		</epsilon.eunit>
+	</target>
+
+	<target name="atl1">
+			<!-- Create temporary files for input and output models -->
+			<tempfile property="atl.temp.srcfile1" />
+			<tempfile property="atl.temp.dstfile1" />
+
+
+			<!-- Save input model to a file -->
+			<epsilon.storeModel model="MultiClassQN1" target="${atl.temp.srcfile1}" />
+
+			<!-- Load the metamodels and the source model -->
+			<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+			<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+			<atl.loadModel name="QN1"   metamodel="MultiClassQN" path="${atl.temp.srcfile1}" />
+
+			<!-- Run ATL and save the model -->
+			<atl.launch path="transformation/MultiClassQN2QPN.atl">
+				<inmodel name="IN"   model="QN1" />
+				<outmodel name="OUT" model="QPN1" metamodel="MultiClassQPN" />
+			</atl.launch>
+	                
+			<atl.saveModel model="QPN1" path="${atl.temp.dstfile1}" derived="false" />
+			
+			<!-- Load it back into the EUnit suite -->
+			<epsilon.emf.loadModel name="QPN1"
+				modelfile="${atl.temp.dstfile1}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+			
+
+			<!-- Delete temporary files -->
+			<delete file="${atl.temp.srcfile1}" />
+			<delete file="${atl.temp.dstfile1}" />
+
+		</target>
+	
+		<target name="atl2">
+			<!-- Create temporary files for input and output models -->
+			<tempfile property="atl.temp.srcfile2" />
+			<tempfile property="atl.temp.dstfile2" />
+
+
+			<!-- Save input model to a file -->
+			<epsilon.storeModel model="MultiClassQN2" target="${atl.temp.srcfile2}" />
+
+			<!-- Load the metamodels and the source model -->
+			<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+			<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+			<atl.loadModel name="QN2"   metamodel="MultiClassQN" path="${atl.temp.srcfile2}" />
+
+			<!-- Run ATL and save the model -->
+			<atl.launch path="transformation/MultiClassQN2QPN.atl">
+				<inmodel name="IN"   model="QN2" />
+				<outmodel name="OUT" model="QPN2" metamodel="MultiClassQPN" />
+			</atl.launch>
+	                
+			<atl.saveModel model="QPN2" path="${atl.temp.dstfile2}" derived="false" />
+			
+			<!-- Load it back into the EUnit suite -->
+			<epsilon.emf.loadModel name="QPN2"
+				modelfile="${atl.temp.dstfile2}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+			
+
+			<!-- Delete temporary files -->
+			<delete file="${atl.temp.srcfile2}" />
+			<delete file="${atl.temp.dstfile2}" />
+
+		</target>
+	
+	<target name="atl3">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile3" />
+		<tempfile property="atl.temp.dstfile3" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN3" target="${atl.temp.srcfile3}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN3"   metamodel="MultiClassQN" path="${atl.temp.srcfile3}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN3" />
+			<outmodel name="OUT" model="QPN3" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN3" path="${atl.temp.dstfile3}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN3"
+			modelfile="${atl.temp.dstfile3}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile3}" />
+		<delete file="${atl.temp.dstfile3}" />
+
+	</target>
+	
+	<target name="atl4">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile4" />
+		<tempfile property="atl.temp.dstfile4" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN4" target="${atl.temp.srcfile4}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN4"   metamodel="MultiClassQN" path="${atl.temp.srcfile4}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN4" />
+			<outmodel name="OUT" model="QPN4" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN4" path="${atl.temp.dstfile4}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN4"
+			modelfile="${atl.temp.dstfile4}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile4}" />
+		<delete file="${atl.temp.dstfile4}" />
+
+	</target>
+	
+	<target name="atl5">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile5" />
+		<tempfile property="atl.temp.dstfile5" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN5" target="${atl.temp.srcfile5}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN5"   metamodel="MultiClassQN" path="${atl.temp.srcfile5}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN5" />
+			<outmodel name="OUT" model="QPN5" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN5" path="${atl.temp.dstfile5}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN5"
+			modelfile="${atl.temp.dstfile5}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile5}" />
+		<delete file="${atl.temp.dstfile5}" />
+
+	</target>
+	
+	<target name="atl6">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile6" />
+		<tempfile property="atl.temp.dstfile6" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN6" target="${atl.temp.srcfile6}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN6"   metamodel="MultiClassQN" path="${atl.temp.srcfile6}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN6" />
+			<outmodel name="OUT" model="QPN6" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN6" path="${atl.temp.dstfile6}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN6"
+			modelfile="${atl.temp.dstfile6}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile6}" />
+		<delete file="${atl.temp.dstfile6}" />
+
+	</target>
+	
+	<target name="atl7">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile7" />
+		<tempfile property="atl.temp.dstfile7" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN7" target="${atl.temp.srcfile7}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN7"   metamodel="MultiClassQN" path="${atl.temp.srcfile7}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN7" />
+			<outmodel name="OUT" model="QPN7" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN7" path="${atl.temp.dstfile7}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN7"
+			modelfile="${atl.temp.dstfile7}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile7}" />
+		<delete file="${atl.temp.dstfile7}" />
+
+	</target>
+	
+	<target name="atl8">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile8" />
+		<tempfile property="atl.temp.dstfile8" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN8" target="${atl.temp.srcfile8}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN8"   metamodel="MultiClassQN" path="${atl.temp.srcfile8}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN8" />
+			<outmodel name="OUT" model="QPN8" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN8" path="${atl.temp.dstfile8}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN8"
+			modelfile="${atl.temp.dstfile8}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile8}" />
+		<delete file="${atl.temp.dstfile8}" />
+
+	</target>
+	
+	<target name="atl9">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile9" />
+		<tempfile property="atl.temp.dstfile9" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN9" target="${atl.temp.srcfile9}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN9"   metamodel="MultiClassQN" path="${atl.temp.srcfile9}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN9" />
+			<outmodel name="OUT" model="QPN9" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN9" path="${atl.temp.dstfile9}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN9"
+			modelfile="${atl.temp.dstfile9}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile9}" />
+		<delete file="${atl.temp.dstfile9}" />
+
+	</target>
+	
+	<target name="atl10">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile10" />
+		<tempfile property="atl.temp.dstfile10" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN10" target="${atl.temp.srcfile10}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN10"   metamodel="MultiClassQN" path="${atl.temp.srcfile10}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN10" />
+			<outmodel name="OUT" model="QPN10" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN10" path="${atl.temp.dstfile10}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN10"
+			modelfile="${atl.temp.dstfile10}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile10}" />
+		<delete file="${atl.temp.dstfile10}" />
+
+	</target>
+	
+	<target name="atl11">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile11" />
+		<tempfile property="atl.temp.dstfile11" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN11" target="${atl.temp.srcfile11}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN11"   metamodel="MultiClassQN" path="${atl.temp.srcfile11}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN11" />
+			<outmodel name="OUT" model="QPN11" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN11" path="${atl.temp.dstfile11}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN11"
+			modelfile="${atl.temp.dstfile11}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile11}" />
+		<delete file="${atl.temp.dstfile11}" />
+
+	</target>
+	
+	<target name="atl12">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile12" />
+		<tempfile property="atl.temp.dstfile12" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN12" target="${atl.temp.srcfile12}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN12"   metamodel="MultiClassQN" path="${atl.temp.srcfile12}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN12" />
+			<outmodel name="OUT" model="QPN12" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN12" path="${atl.temp.dstfile12}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN12"
+			modelfile="${atl.temp.dstfile12}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile12}" />
+		<delete file="${atl.temp.dstfile12}" />
+
+	</target>
+	
+	<target name="atl13">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile13" />
+		<tempfile property="atl.temp.dstfile13" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN13" target="${atl.temp.srcfile13}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN13"   metamodel="MultiClassQN" path="${atl.temp.srcfile13}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN13" />
+			<outmodel name="OUT" model="QPN13" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN13" path="${atl.temp.dstfile13}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN13"
+			modelfile="${atl.temp.dstfile13}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile13}" />
+		<delete file="${atl.temp.dstfile13}" />
+
+	</target>
+	
+	<target name="atl14">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile14" />
+		<tempfile property="atl.temp.dstfile14" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN14" target="${atl.temp.srcfile14}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN14"   metamodel="MultiClassQN" path="${atl.temp.srcfile14}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN14" />
+			<outmodel name="OUT" model="QPN14" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN14" path="${atl.temp.dstfile14}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN14"
+			modelfile="${atl.temp.dstfile14}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile14}" />
+		<delete file="${atl.temp.dstfile14}" />
+
+	</target>
+	
+	<target name="atl15">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile15" />
+		<tempfile property="atl.temp.dstfile15" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN15" target="${atl.temp.srcfile15}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN15"   metamodel="MultiClassQN" path="${atl.temp.srcfile15}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN15" />
+			<outmodel name="OUT" model="QPN15" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN15" path="${atl.temp.dstfile15}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN15"
+			modelfile="${atl.temp.dstfile15}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile15}" />
+		<delete file="${atl.temp.dstfile15}" />
+
+	</target>
+	
+	<target name="atl16">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile16" />
+		<tempfile property="atl.temp.dstfile16" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN16" target="${atl.temp.srcfile16}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN16"   metamodel="MultiClassQN" path="${atl.temp.srcfile16}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN16" />
+			<outmodel name="OUT" model="QPN16" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN16" path="${atl.temp.dstfile16}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN16"
+			modelfile="${atl.temp.dstfile16}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile16}" />
+		<delete file="${atl.temp.dstfile16}" />
+
+	</target>
+	
+	<target name="atl17">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile17" />
+		<tempfile property="atl.temp.dstfile17" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN17" target="${atl.temp.srcfile17}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN17"   metamodel="MultiClassQN" path="${atl.temp.srcfile17}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN17" />
+			<outmodel name="OUT" model="QPN17" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN17" path="${atl.temp.dstfile17}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN17"
+			modelfile="${atl.temp.dstfile17}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile17}" />
+		<delete file="${atl.temp.dstfile17}" />
+
+	</target>
+	
+	<target name="atl18">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile18" />
+		<tempfile property="atl.temp.dstfile18" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN18" target="${atl.temp.srcfile18}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN18"   metamodel="MultiClassQN" path="${atl.temp.srcfile18}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN18" />
+			<outmodel name="OUT" model="QPN18" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN18" path="${atl.temp.dstfile18}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN18"
+			modelfile="${atl.temp.dstfile18}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile18}" />
+		<delete file="${atl.temp.dstfile18}" />
+
+	</target>
+	
+	<target name="atl19">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile19" />
+		<tempfile property="atl.temp.dstfile19" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN19" target="${atl.temp.srcfile19}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN19"   metamodel="MultiClassQN" path="${atl.temp.srcfile19}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN19" />
+			<outmodel name="OUT" model="QPN19" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN19" path="${atl.temp.dstfile19}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN19"
+			modelfile="${atl.temp.dstfile19}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile19}" />
+		<delete file="${atl.temp.dstfile19}" />
+
+	</target>
+	
+	<target name="atl20">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile20" />
+		<tempfile property="atl.temp.dstfile20" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN20" target="${atl.temp.srcfile20}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN20"   metamodel="MultiClassQN" path="${atl.temp.srcfile20}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN20" />
+			<outmodel name="OUT" model="QPN20" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN20" path="${atl.temp.dstfile20}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN20"
+			modelfile="${atl.temp.dstfile20}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile20}" />
+		<delete file="${atl.temp.dstfile20}" />
+
+	</target>
+	
+	<target name="atl21">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile21" />
+		<tempfile property="atl.temp.dstfile21" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN21" target="${atl.temp.srcfile21}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN21"   metamodel="MultiClassQN" path="${atl.temp.srcfile21}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN21" />
+			<outmodel name="OUT" model="QPN21" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN21" path="${atl.temp.dstfile21}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN21"
+			modelfile="${atl.temp.dstfile21}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile21}" />
+		<delete file="${atl.temp.dstfile21}" />
+
+	</target>
+	
+	<target name="atl22">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile22" />
+		<tempfile property="atl.temp.dstfile22" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN22" target="${atl.temp.srcfile22}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN22"   metamodel="MultiClassQN" path="${atl.temp.srcfile22}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN22" />
+			<outmodel name="OUT" model="QPN22" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN22" path="${atl.temp.dstfile22}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN22"
+			modelfile="${atl.temp.dstfile22}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile22}" />
+		<delete file="${atl.temp.dstfile22}" />
+
+	</target>
+	
+	<target name="atl23">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile23" />
+		<tempfile property="atl.temp.dstfile23" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN23" target="${atl.temp.srcfile23}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN23"   metamodel="MultiClassQN" path="${atl.temp.srcfile23}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN23" />
+			<outmodel name="OUT" model="QPN23" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN23" path="${atl.temp.dstfile23}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN23"
+			modelfile="${atl.temp.dstfile23}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile23}" />
+		<delete file="${atl.temp.dstfile23}" />
+
+	</target>
+	
+	<target name="atl24">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile24" />
+		<tempfile property="atl.temp.dstfile24" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN24" target="${atl.temp.srcfile24}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN24"   metamodel="MultiClassQN" path="${atl.temp.srcfile24}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN24" />
+			<outmodel name="OUT" model="QPN24" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN24" path="${atl.temp.dstfile24}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN24"
+			modelfile="${atl.temp.dstfile24}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile24}" />
+		<delete file="${atl.temp.dstfile24}" />
+
+	</target>
+	
+	<target name="atl25">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile25" />
+		<tempfile property="atl.temp.dstfile25" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN25" target="${atl.temp.srcfile25}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN25"   metamodel="MultiClassQN" path="${atl.temp.srcfile25}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN25" />
+			<outmodel name="OUT" model="QPN25" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN25" path="${atl.temp.dstfile25}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN25"
+			modelfile="${atl.temp.dstfile25}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile25}" />
+		<delete file="${atl.temp.dstfile25}" />
+
+	</target>
+	
+	<target name="atl26">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile26" />
+		<tempfile property="atl.temp.dstfile26" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN26" target="${atl.temp.srcfile26}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN26"   metamodel="MultiClassQN" path="${atl.temp.srcfile26}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN26" />
+			<outmodel name="OUT" model="QPN26" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN26" path="${atl.temp.dstfile26}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN26"
+			modelfile="${atl.temp.dstfile26}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile26}" />
+		<delete file="${atl.temp.dstfile26}" />
+
+	</target>
+	
+	<target name="atl27">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile27" />
+		<tempfile property="atl.temp.dstfile27" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN27" target="${atl.temp.srcfile27}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN27"   metamodel="MultiClassQN" path="${atl.temp.srcfile27}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN27" />
+			<outmodel name="OUT" model="QPN27" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN27" path="${atl.temp.dstfile27}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN27"
+			modelfile="${atl.temp.dstfile27}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile27}" />
+		<delete file="${atl.temp.dstfile27}" />
+
+	</target>
+	
+	<target name="atl28">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile28" />
+		<tempfile property="atl.temp.dstfile28" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN28" target="${atl.temp.srcfile28}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN28"   metamodel="MultiClassQN" path="${atl.temp.srcfile28}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN28" />
+			<outmodel name="OUT" model="QPN28" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN28" path="${atl.temp.dstfile28}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN28"
+			modelfile="${atl.temp.dstfile28}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile28}" />
+		<delete file="${atl.temp.dstfile28}" />
+
+	</target>
+	
+	<target name="atl29">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile29" />
+		<tempfile property="atl.temp.dstfile29" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN29" target="${atl.temp.srcfile29}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN29"   metamodel="MultiClassQN" path="${atl.temp.srcfile29}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN29" />
+			<outmodel name="OUT" model="QPN29" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN29" path="${atl.temp.dstfile29}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN29"
+			modelfile="${atl.temp.dstfile29}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile29}" />
+		<delete file="${atl.temp.dstfile29}" />
+
+	</target>
+	
+	<target name="atl30">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile30" />
+		<tempfile property="atl.temp.dstfile30" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN30" target="${atl.temp.srcfile30}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN30"   metamodel="MultiClassQN" path="${atl.temp.srcfile30}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN30" />
+			<outmodel name="OUT" model="QPN30" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN30" path="${atl.temp.dstfile30}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN30"
+			modelfile="${atl.temp.dstfile30}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile30}" />
+		<delete file="${atl.temp.dstfile30}" />
+
+	</target>
+	
+	<target name="atl31">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile31" />
+		<tempfile property="atl.temp.dstfile31" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN31" target="${atl.temp.srcfile31}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN31"   metamodel="MultiClassQN" path="${atl.temp.srcfile31}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN31" />
+			<outmodel name="OUT" model="QPN31" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN31" path="${atl.temp.dstfile31}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN31"
+			modelfile="${atl.temp.dstfile31}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile31}" />
+		<delete file="${atl.temp.dstfile31}" />
+
+	</target>
+	
+	<target name="atl32">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile32" />
+		<tempfile property="atl.temp.dstfile32" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN32" target="${atl.temp.srcfile32}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN32"   metamodel="MultiClassQN" path="${atl.temp.srcfile32}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN32" />
+			<outmodel name="OUT" model="QPN32" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN32" path="${atl.temp.dstfile32}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN32"
+			modelfile="${atl.temp.dstfile32}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile32}" />
+		<delete file="${atl.temp.dstfile32}" />
+
+	</target>
+	
+	<target name="atl33">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile33" />
+		<tempfile property="atl.temp.dstfile33" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN33" target="${atl.temp.srcfile33}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN33"   metamodel="MultiClassQN" path="${atl.temp.srcfile33}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN33" />
+			<outmodel name="OUT" model="QPN33" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN33" path="${atl.temp.dstfile33}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN33"
+			modelfile="${atl.temp.dstfile33}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile33}" />
+		<delete file="${atl.temp.dstfile33}" />
+
+	</target>
+	
+	<target name="atl34">
+		<!-- Create temporary files for input and output models -->
+		<tempfile property="atl.temp.srcfile34" />
+		<tempfile property="atl.temp.dstfile34" />
+
+
+		<!-- Save input model to a file -->
+		<epsilon.storeModel model="MultiClassQN34" target="${atl.temp.srcfile34}" />
+
+		<!-- Load the metamodels and the source model -->
+		<atl.loadModel name="MultiClassQN"   metamodel="MOF" path="metamodels/MultiClassQN.ecore" />
+		<atl.loadModel name="MultiClassQPN"  metamodel="MOF" path="metamodels/MultiClassQPN.ecore" />
+		<atl.loadModel name="QN34"   metamodel="MultiClassQN" path="${atl.temp.srcfile34}" />
+
+		<!-- Run ATL and save the model -->
+		<atl.launch path="transformation/MultiClassQN2QPN.atl">
+			<inmodel name="IN"   model="QN34" />
+			<outmodel name="OUT" model="QPN34" metamodel="MultiClassQPN" />
+		</atl.launch>
+				
+		<atl.saveModel model="QPN34" path="${atl.temp.dstfile34}" derived="false" />
+		
+		<!-- Load it back into the EUnit suite -->
+		<epsilon.emf.loadModel name="QPN34"
+			modelfile="${atl.temp.dstfile34}" metamodeluri="${MultiClassQPN.metamodel.uri}" read="true" store="false" />
+		
+
+		<!-- Delete temporary files -->
+		<delete file="${atl.temp.srcfile34}" />
+		<delete file="${atl.temp.dstfile34}" />
+
+	</target>
+	
+</project>

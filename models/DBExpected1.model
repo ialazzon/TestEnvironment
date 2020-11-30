@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DB:Database xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB="DB" xmi:id="_k430EN3QEeiB8LHvKebGTg">
+  <contents xsi:type="DB:Table" xmi:id="_k430Fd3QEeiB8LHvKebGTg" name="Student" primaryKeys="_k430Ft3QEeiB8LHvKebGTg">
+    <columns xmi:id="_k430Ft3QEeiB8LHvKebGTg" name="studentId" type="INT"/>
+    <columns xmi:id="_k430Gt3QEeiB8LHvKebGTg" name="studentsId" type="INT"/>
+  </contents>
+  <contents xsi:type="DB:Table" xmi:id="_k430KN3QEeiB8LHvKebGTg" name="Class" primaryKeys="_k430Kd3QEeiB8LHvKebGTg">
+    <columns xmi:id="_k430Kd3QEeiB8LHvKebGTg" name="classId" type="INT"/>
+  </contents>
+  <contents xsi:type="DB:ForeignKey" xmi:id="_k430Md3QEeiB8LHvKebGTg" name="students" parent="_k430Kd3QEeiB8LHvKebGTg" child="_k430Gt3QEeiB8LHvKebGTg"/>
+</DB:Database>

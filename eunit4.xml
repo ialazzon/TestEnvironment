@@ -1,0 +1,1362 @@
+<project default="run-tests">
+
+	<property name="metamodels.location" location="${basedir}/metamodels" />
+	<property name="CPL.metamodel.location" location="${metamodels.location}/CPL.ecore" />
+	<property name="SPL.metamodel.location" location="${metamodels.location}/SPL.ecore" />
+	<property name="SPL.metamodel.uri" value="http://spl/1.0" />
+	<property name="CPL.metamodel.uri" value="http://cpl/1.0" />
+
+	<target name="run-tests">
+		<!--
+		 Note: when comparing models with EUnit, avoid using metamodelfile in the epsilon.emf.loadModel task!
+		 It will result in each model having a different EPackage instance, producing unwanted differences
+		 in assertEqualModels.
+		 -->
+		<epsilon.emf.register file="${CPL.metamodel.location}"/>
+		<epsilon.emf.register file="${SPL.metamodel.location}"/>
+		
+		<epsilon.eunit src="tests/atl4.eunit">
+			<modelTasks>
+				<epsilon.emf.loadModel
+					name="CPL64" modelfile="models/AutomaticModel_CPL64.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL64" modelfile="models/Output_SPL64.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL85" modelfile="models/AutomaticModel_CPL85.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL85" modelfile="models/Output_SPL85.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL22" modelfile="models/AutomaticModel_CPL22.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL22" modelfile="models/Output_SPL22.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL14" modelfile="models/AutomaticModel_CPL14.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL14" modelfile="models/Output_SPL14.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL63" modelfile="models/AutomaticModel_CPL63.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL63" modelfile="models/Output_SPL63.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL72" modelfile="models/AutomaticModel_CPL72.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL72" modelfile="models/Output_SPL72.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL53" modelfile="models/AutomaticModel_CPL53.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL53" modelfile="models/Output_SPL53.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL86" modelfile="models/AutomaticModel_CPL86.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL86" modelfile="models/Output_SPL86.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL69" modelfile="models/AutomaticModel_CPL69.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL69" modelfile="models/Output_SPL69.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL32" modelfile="models/AutomaticModel_CPL32.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL32" modelfile="models/Output_SPL32.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL49" modelfile="models/AutomaticModel_CPL49.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL49" modelfile="models/Output_SPL49.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL45" modelfile="models/AutomaticModel_CPL45.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL45" modelfile="models/Output_SPL45.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL98" modelfile="models/AutomaticModel_CPL98.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL98" modelfile="models/Output_SPL98.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL57" modelfile="models/AutomaticModel_CPL57.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL57" modelfile="models/Output_SPL57.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL34" modelfile="models/AutomaticModel_CPL34.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL34" modelfile="models/Output_SPL34.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL39" modelfile="models/AutomaticModel_CPL39.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL39" modelfile="models/Output_SPL39.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL26" modelfile="models/AutomaticModel_CPL26.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL26" modelfile="models/Output_SPL26.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL27" modelfile="models/AutomaticModel_CPL27.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL27" modelfile="models/Output_SPL27.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL25" modelfile="models/AutomaticModel_CPL25.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL25" modelfile="models/Output_SPL25.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL43" modelfile="models/AutomaticModel_CPL43.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL43" modelfile="models/Output_SPL43.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL56" modelfile="models/AutomaticModel_CPL56.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL56" modelfile="models/Output_SPL56.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL94" modelfile="models/AutomaticModel_CPL94.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL94" modelfile="models/Output_SPL94.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL44" modelfile="models/AutomaticModel_CPL44.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL44" modelfile="models/Output_SPL44.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL77" modelfile="models/AutomaticModel_CPL77.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL77" modelfile="models/Output_SPL77.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL99" modelfile="models/AutomaticModel_CPL99.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL99" modelfile="models/Output_SPL99.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL78" modelfile="models/AutomaticModel_CPL78.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL78" modelfile="models/Output_SPL78.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL31" modelfile="models/AutomaticModel_CPL31.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL31" modelfile="models/Output_SPL31.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL13" modelfile="models/AutomaticModel_CPL13.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL13" modelfile="models/Output_SPL13.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL11" modelfile="models/AutomaticModel_CPL11.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL11" modelfile="models/Output_SPL11.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL20" modelfile="models/AutomaticModel_CPL20.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL20" modelfile="models/Output_SPL20.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL40" modelfile="models/AutomaticModel_CPL40.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL40" modelfile="models/Output_SPL40.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL82" modelfile="models/AutomaticModel_CPL82.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL82" modelfile="models/Output_SPL82.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL80" modelfile="models/AutomaticModel_CPL80.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL80" modelfile="models/Output_SPL80.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL79" modelfile="models/AutomaticModel_CPL79.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL79" modelfile="models/Output_SPL79.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="CPL91" modelfile="models/AutomaticModel_CPL91.xmi"
+					metamodeluri="${CPL.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_SPL91" modelfile="models/Output_SPL91.xmi"
+					metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+							
+			</modelTasks>
+		</epsilon.eunit>
+	</target>
+
+
+
+			<target name="atl64">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile64" />
+				<tempfile property="atl.temp.dstfile64" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL64" target="${atl.temp.srcfile64}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL64m"   metamodel="CPL" path="${atl.temp.srcfile64}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL64m" />
+					<outmodel name="OUT" model="SPL64" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL64" path="${atl.temp.dstfile64}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL64"
+					modelfile="${atl.temp.dstfile64}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile64}" />
+				<delete file="${atl.temp.dstfile64}" />
+
+			</target>
+			<target name="atl85">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile85" />
+				<tempfile property="atl.temp.dstfile85" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL85" target="${atl.temp.srcfile85}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL85m"   metamodel="CPL" path="${atl.temp.srcfile85}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL85m" />
+					<outmodel name="OUT" model="SPL85" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL85" path="${atl.temp.dstfile85}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL85"
+					modelfile="${atl.temp.dstfile85}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile85}" />
+				<delete file="${atl.temp.dstfile85}" />
+
+			</target>
+			<target name="atl22">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile22" />
+				<tempfile property="atl.temp.dstfile22" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL22" target="${atl.temp.srcfile22}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL22m"   metamodel="CPL" path="${atl.temp.srcfile22}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL22m" />
+					<outmodel name="OUT" model="SPL22" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL22" path="${atl.temp.dstfile22}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL22"
+					modelfile="${atl.temp.dstfile22}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile22}" />
+				<delete file="${atl.temp.dstfile22}" />
+
+			</target>
+			<target name="atl14">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile14" />
+				<tempfile property="atl.temp.dstfile14" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL14" target="${atl.temp.srcfile14}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL14m"   metamodel="CPL" path="${atl.temp.srcfile14}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL14m" />
+					<outmodel name="OUT" model="SPL14" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL14" path="${atl.temp.dstfile14}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL14"
+					modelfile="${atl.temp.dstfile14}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile14}" />
+				<delete file="${atl.temp.dstfile14}" />
+
+			</target>
+			<target name="atl63">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile63" />
+				<tempfile property="atl.temp.dstfile63" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL63" target="${atl.temp.srcfile63}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL63m"   metamodel="CPL" path="${atl.temp.srcfile63}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL63m" />
+					<outmodel name="OUT" model="SPL63" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL63" path="${atl.temp.dstfile63}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL63"
+					modelfile="${atl.temp.dstfile63}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile63}" />
+				<delete file="${atl.temp.dstfile63}" />
+
+			</target>
+			<target name="atl72">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile72" />
+				<tempfile property="atl.temp.dstfile72" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL72" target="${atl.temp.srcfile72}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL72m"   metamodel="CPL" path="${atl.temp.srcfile72}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL72m" />
+					<outmodel name="OUT" model="SPL72" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL72" path="${atl.temp.dstfile72}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL72"
+					modelfile="${atl.temp.dstfile72}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile72}" />
+				<delete file="${atl.temp.dstfile72}" />
+
+			</target>
+			<target name="atl53">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile53" />
+				<tempfile property="atl.temp.dstfile53" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL53" target="${atl.temp.srcfile53}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL53m"   metamodel="CPL" path="${atl.temp.srcfile53}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL53m" />
+					<outmodel name="OUT" model="SPL53" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL53" path="${atl.temp.dstfile53}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL53"
+					modelfile="${atl.temp.dstfile53}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile53}" />
+				<delete file="${atl.temp.dstfile53}" />
+
+			</target>
+			<target name="atl86">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile86" />
+				<tempfile property="atl.temp.dstfile86" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL86" target="${atl.temp.srcfile86}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL86m"   metamodel="CPL" path="${atl.temp.srcfile86}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL86m" />
+					<outmodel name="OUT" model="SPL86" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL86" path="${atl.temp.dstfile86}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL86"
+					modelfile="${atl.temp.dstfile86}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile86}" />
+				<delete file="${atl.temp.dstfile86}" />
+
+			</target>
+			<target name="atl69">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile69" />
+				<tempfile property="atl.temp.dstfile69" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL69" target="${atl.temp.srcfile69}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL69m"   metamodel="CPL" path="${atl.temp.srcfile69}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL69m" />
+					<outmodel name="OUT" model="SPL69" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL69" path="${atl.temp.dstfile69}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL69"
+					modelfile="${atl.temp.dstfile69}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile69}" />
+				<delete file="${atl.temp.dstfile69}" />
+
+			</target>
+			<target name="atl32">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile32" />
+				<tempfile property="atl.temp.dstfile32" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL32" target="${atl.temp.srcfile32}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL32m"   metamodel="CPL" path="${atl.temp.srcfile32}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL32m" />
+					<outmodel name="OUT" model="SPL32" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL32" path="${atl.temp.dstfile32}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL32"
+					modelfile="${atl.temp.dstfile32}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile32}" />
+				<delete file="${atl.temp.dstfile32}" />
+
+			</target>
+			<target name="atl49">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile49" />
+				<tempfile property="atl.temp.dstfile49" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL49" target="${atl.temp.srcfile49}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL49m"   metamodel="CPL" path="${atl.temp.srcfile49}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL49m" />
+					<outmodel name="OUT" model="SPL49" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL49" path="${atl.temp.dstfile49}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL49"
+					modelfile="${atl.temp.dstfile49}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile49}" />
+				<delete file="${atl.temp.dstfile49}" />
+
+			</target>
+			<target name="atl45">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile45" />
+				<tempfile property="atl.temp.dstfile45" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL45" target="${atl.temp.srcfile45}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL45m"   metamodel="CPL" path="${atl.temp.srcfile45}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL45m" />
+					<outmodel name="OUT" model="SPL45" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL45" path="${atl.temp.dstfile45}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL45"
+					modelfile="${atl.temp.dstfile45}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile45}" />
+				<delete file="${atl.temp.dstfile45}" />
+
+			</target>
+			<target name="atl98">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile98" />
+				<tempfile property="atl.temp.dstfile98" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL98" target="${atl.temp.srcfile98}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL98m"   metamodel="CPL" path="${atl.temp.srcfile98}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL98m" />
+					<outmodel name="OUT" model="SPL98" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL98" path="${atl.temp.dstfile98}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL98"
+					modelfile="${atl.temp.dstfile98}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile98}" />
+				<delete file="${atl.temp.dstfile98}" />
+
+			</target>
+			<target name="atl57">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile57" />
+				<tempfile property="atl.temp.dstfile57" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL57" target="${atl.temp.srcfile57}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL57m"   metamodel="CPL" path="${atl.temp.srcfile57}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL57m" />
+					<outmodel name="OUT" model="SPL57" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL57" path="${atl.temp.dstfile57}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL57"
+					modelfile="${atl.temp.dstfile57}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile57}" />
+				<delete file="${atl.temp.dstfile57}" />
+
+			</target>
+			<target name="atl34">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile34" />
+				<tempfile property="atl.temp.dstfile34" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL34" target="${atl.temp.srcfile34}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL34m"   metamodel="CPL" path="${atl.temp.srcfile34}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL34m" />
+					<outmodel name="OUT" model="SPL34" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL34" path="${atl.temp.dstfile34}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL34"
+					modelfile="${atl.temp.dstfile34}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile34}" />
+				<delete file="${atl.temp.dstfile34}" />
+
+			</target>
+			<target name="atl39">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile39" />
+				<tempfile property="atl.temp.dstfile39" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL39" target="${atl.temp.srcfile39}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL39m"   metamodel="CPL" path="${atl.temp.srcfile39}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL39m" />
+					<outmodel name="OUT" model="SPL39" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL39" path="${atl.temp.dstfile39}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL39"
+					modelfile="${atl.temp.dstfile39}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile39}" />
+				<delete file="${atl.temp.dstfile39}" />
+
+			</target>
+			<target name="atl26">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile26" />
+				<tempfile property="atl.temp.dstfile26" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL26" target="${atl.temp.srcfile26}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL26m"   metamodel="CPL" path="${atl.temp.srcfile26}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL26m" />
+					<outmodel name="OUT" model="SPL26" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL26" path="${atl.temp.dstfile26}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL26"
+					modelfile="${atl.temp.dstfile26}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile26}" />
+				<delete file="${atl.temp.dstfile26}" />
+
+			</target>
+			<target name="atl27">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile27" />
+				<tempfile property="atl.temp.dstfile27" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL27" target="${atl.temp.srcfile27}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL27m"   metamodel="CPL" path="${atl.temp.srcfile27}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL27m" />
+					<outmodel name="OUT" model="SPL27" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL27" path="${atl.temp.dstfile27}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL27"
+					modelfile="${atl.temp.dstfile27}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile27}" />
+				<delete file="${atl.temp.dstfile27}" />
+
+			</target>
+			<target name="atl25">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile25" />
+				<tempfile property="atl.temp.dstfile25" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL25" target="${atl.temp.srcfile25}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL25m"   metamodel="CPL" path="${atl.temp.srcfile25}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL25m" />
+					<outmodel name="OUT" model="SPL25" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL25" path="${atl.temp.dstfile25}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL25"
+					modelfile="${atl.temp.dstfile25}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile25}" />
+				<delete file="${atl.temp.dstfile25}" />
+
+			</target>
+			<target name="atl43">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile43" />
+				<tempfile property="atl.temp.dstfile43" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL43" target="${atl.temp.srcfile43}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL43m"   metamodel="CPL" path="${atl.temp.srcfile43}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL43m" />
+					<outmodel name="OUT" model="SPL43" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL43" path="${atl.temp.dstfile43}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL43"
+					modelfile="${atl.temp.dstfile43}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile43}" />
+				<delete file="${atl.temp.dstfile43}" />
+
+			</target>
+			<target name="atl56">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile56" />
+				<tempfile property="atl.temp.dstfile56" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL56" target="${atl.temp.srcfile56}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL56m"   metamodel="CPL" path="${atl.temp.srcfile56}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL56m" />
+					<outmodel name="OUT" model="SPL56" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL56" path="${atl.temp.dstfile56}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL56"
+					modelfile="${atl.temp.dstfile56}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile56}" />
+				<delete file="${atl.temp.dstfile56}" />
+
+			</target>
+			<target name="atl94">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile94" />
+				<tempfile property="atl.temp.dstfile94" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL94" target="${atl.temp.srcfile94}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL94m"   metamodel="CPL" path="${atl.temp.srcfile94}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL94m" />
+					<outmodel name="OUT" model="SPL94" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL94" path="${atl.temp.dstfile94}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL94"
+					modelfile="${atl.temp.dstfile94}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile94}" />
+				<delete file="${atl.temp.dstfile94}" />
+
+			</target>
+			<target name="atl44">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile44" />
+				<tempfile property="atl.temp.dstfile44" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL44" target="${atl.temp.srcfile44}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL44m"   metamodel="CPL" path="${atl.temp.srcfile44}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL44m" />
+					<outmodel name="OUT" model="SPL44" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL44" path="${atl.temp.dstfile44}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL44"
+					modelfile="${atl.temp.dstfile44}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile44}" />
+				<delete file="${atl.temp.dstfile44}" />
+
+			</target>
+			<target name="atl77">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile77" />
+				<tempfile property="atl.temp.dstfile77" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL77" target="${atl.temp.srcfile77}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL77m"   metamodel="CPL" path="${atl.temp.srcfile77}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL77m" />
+					<outmodel name="OUT" model="SPL77" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL77" path="${atl.temp.dstfile77}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL77"
+					modelfile="${atl.temp.dstfile77}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile77}" />
+				<delete file="${atl.temp.dstfile77}" />
+
+			</target>
+			<target name="atl99">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile99" />
+				<tempfile property="atl.temp.dstfile99" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL99" target="${atl.temp.srcfile99}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL99m"   metamodel="CPL" path="${atl.temp.srcfile99}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL99m" />
+					<outmodel name="OUT" model="SPL99" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL99" path="${atl.temp.dstfile99}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL99"
+					modelfile="${atl.temp.dstfile99}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile99}" />
+				<delete file="${atl.temp.dstfile99}" />
+
+			</target>
+			<target name="atl78">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile78" />
+				<tempfile property="atl.temp.dstfile78" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL78" target="${atl.temp.srcfile78}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL78m"   metamodel="CPL" path="${atl.temp.srcfile78}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL78m" />
+					<outmodel name="OUT" model="SPL78" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL78" path="${atl.temp.dstfile78}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL78"
+					modelfile="${atl.temp.dstfile78}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile78}" />
+				<delete file="${atl.temp.dstfile78}" />
+
+			</target>
+			<target name="atl31">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile31" />
+				<tempfile property="atl.temp.dstfile31" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL31" target="${atl.temp.srcfile31}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL31m"   metamodel="CPL" path="${atl.temp.srcfile31}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL31m" />
+					<outmodel name="OUT" model="SPL31" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL31" path="${atl.temp.dstfile31}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL31"
+					modelfile="${atl.temp.dstfile31}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile31}" />
+				<delete file="${atl.temp.dstfile31}" />
+
+			</target>
+			<target name="atl13">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile13" />
+				<tempfile property="atl.temp.dstfile13" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL13" target="${atl.temp.srcfile13}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL13m"   metamodel="CPL" path="${atl.temp.srcfile13}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL13m" />
+					<outmodel name="OUT" model="SPL13" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL13" path="${atl.temp.dstfile13}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL13"
+					modelfile="${atl.temp.dstfile13}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile13}" />
+				<delete file="${atl.temp.dstfile13}" />
+
+			</target>
+			<target name="atl11">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile11" />
+				<tempfile property="atl.temp.dstfile11" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL11" target="${atl.temp.srcfile11}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL11m"   metamodel="CPL" path="${atl.temp.srcfile11}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL11m" />
+					<outmodel name="OUT" model="SPL11" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL11" path="${atl.temp.dstfile11}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL11"
+					modelfile="${atl.temp.dstfile11}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile11}" />
+				<delete file="${atl.temp.dstfile11}" />
+
+			</target>
+			<target name="atl20">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile20" />
+				<tempfile property="atl.temp.dstfile20" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL20" target="${atl.temp.srcfile20}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL20m"   metamodel="CPL" path="${atl.temp.srcfile20}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL20m" />
+					<outmodel name="OUT" model="SPL20" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL20" path="${atl.temp.dstfile20}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL20"
+					modelfile="${atl.temp.dstfile20}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile20}" />
+				<delete file="${atl.temp.dstfile20}" />
+
+			</target>
+			<target name="atl40">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile40" />
+				<tempfile property="atl.temp.dstfile40" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL40" target="${atl.temp.srcfile40}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL40m"   metamodel="CPL" path="${atl.temp.srcfile40}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL40m" />
+					<outmodel name="OUT" model="SPL40" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL40" path="${atl.temp.dstfile40}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL40"
+					modelfile="${atl.temp.dstfile40}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile40}" />
+				<delete file="${atl.temp.dstfile40}" />
+
+			</target>
+			<target name="atl82">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile82" />
+				<tempfile property="atl.temp.dstfile82" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL82" target="${atl.temp.srcfile82}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL82m"   metamodel="CPL" path="${atl.temp.srcfile82}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL82m" />
+					<outmodel name="OUT" model="SPL82" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL82" path="${atl.temp.dstfile82}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL82"
+					modelfile="${atl.temp.dstfile82}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile82}" />
+				<delete file="${atl.temp.dstfile82}" />
+
+			</target>
+			<target name="atl80">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile80" />
+				<tempfile property="atl.temp.dstfile80" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL80" target="${atl.temp.srcfile80}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL80m"   metamodel="CPL" path="${atl.temp.srcfile80}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL80m" />
+					<outmodel name="OUT" model="SPL80" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL80" path="${atl.temp.dstfile80}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL80"
+					modelfile="${atl.temp.dstfile80}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile80}" />
+				<delete file="${atl.temp.dstfile80}" />
+
+			</target>
+			<target name="atl79">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile79" />
+				<tempfile property="atl.temp.dstfile79" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL79" target="${atl.temp.srcfile79}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL79m"   metamodel="CPL" path="${atl.temp.srcfile79}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL79m" />
+					<outmodel name="OUT" model="SPL79" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL79" path="${atl.temp.dstfile79}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL79"
+					modelfile="${atl.temp.dstfile79}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile79}" />
+				<delete file="${atl.temp.dstfile79}" />
+
+			</target>
+			<target name="atl91">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile91" />
+				<tempfile property="atl.temp.dstfile91" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="CPL91" target="${atl.temp.srcfile91}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="CPL"   metamodel="MOF" path="metamodels/CPL.ecore" />
+				<atl.loadModel name="SPL"  metamodel="MOF" path="metamodels/SPL.ecore" />
+				<atl.loadModel name="CPL91m"   metamodel="CPL" path="${atl.temp.srcfile91}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/CPL2SPL.atl">
+					<inmodel name="IN"   model="CPL91m" />
+					<outmodel name="OUT" model="SPL91" metamodel="SPL" />
+				</atl.launch>
+		                
+				<atl.saveModel model="SPL91" path="${atl.temp.dstfile91}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="SPL91"
+					modelfile="${atl.temp.dstfile91}" metamodeluri="${SPL.metamodel.uri}" read="true" store="false" />
+				
+
+				<!--Delete temporary files -->
+				<delete file="${atl.temp.srcfile91}" />
+				<delete file="${atl.temp.dstfile91}" />
+
+			</target>
+
+
+			
+	
+	
+</project>

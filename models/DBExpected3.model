@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DB:Database xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB="DB">
+  <contents xsi:type="DB:Table" name="Student" primaryKeys="//@contents.0/@columns.0">
+    <columns name="studentId" type="INT"/>
+    <columns name="personId" type="INT"/>
+    <columns name="grade" type="NUMBER"/>
+  </contents>
+  <contents xsi:type="DB:Table" name="Person" primaryKeys="//@contents.1/@columns.0">
+    <columns name="personId" type="INT"/>
+    <columns name="details" type="NVARCHAR"/>
+  </contents>
+  <contents xsi:type="DB:ForeignKey" name="StudentExtendsPerson" parent="//@contents.1/@columns.0" child="//@contents.0/@columns.1"/>
+</DB:Database>

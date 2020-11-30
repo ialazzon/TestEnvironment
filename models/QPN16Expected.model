@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MultiClassQPN:QPN xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MultiClassQPN="MultiClassQPN">
+  <places xsi:type="MultiClassQPN:QueueingPlace" incoming="//@arcs.4" outgoing="//@arcs.0" name="Source1" numOfTokens="1" schedulingPolicy="IS" serviceDistribution="Constant">
+    <serviceParams>1.0</serviceParams>
+  </places>
+  <places xsi:type="MultiClassQPN:QueueingPlace" outgoing="//@arcs.1" name="Server1" serviceDemand="//@serviceDemands.0"/>
+  <places xsi:type="MultiClassQPN:QueueingPlace" incoming="//@arcs.2 //@arcs.3" name="Sink1"/>
+  <transitions incoming="//@arcs.0" outgoing="//@arcs.4 //@arcs.2" mode="//@modes.0"/>
+  <transitions incoming="//@arcs.1" outgoing="//@arcs.3" mode="//@modes.1"/>
+  <arcs xsi:type="MultiClassQPN:PlaceToTransArc" source="//@places.0" target="//@transitions.0"/>
+  <arcs xsi:type="MultiClassQPN:PlaceToTransArc" source="//@places.1" target="//@transitions.1"/>
+  <arcs xsi:type="MultiClassQPN:TransToPlaceArc" source="//@transitions.0" target="//@places.2"/>
+  <arcs xsi:type="MultiClassQPN:TransToPlaceArc" source="//@transitions.1" target="//@places.2"/>
+  <arcs xsi:type="MultiClassQPN:TransToPlaceArc" source="//@transitions.0" target="//@places.0"/>
+  <colors name="Workload1" serviceDemand="//@serviceDemands.0" mode="//@modes.0 //@modes.1"/>
+  <serviceDemands queueingPlace="//@places.1" color="Workload1">
+    <serviceParams>30.0</serviceParams>
+  </serviceDemands>
+  <modes weight="1.0" transition="//@transitions.0" color="Workload1"/>
+  <modes weight="1.0" transition="//@transitions.1" color="Workload1"/>
+</MultiClassQPN:QPN>

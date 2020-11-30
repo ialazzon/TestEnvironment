@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MultiClassQPN:QPN xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MultiClassQPN="MultiClassQPN">
+  <places xsi:type="MultiClassQPN:QueueingPlace" incoming="//@arcs.0" name="SourceNode1" numOfTokens="1" color="Workload1" schedulingPolicy="IS" serviceDistribution="Exponential">
+    <serviceParams>0.5</serviceParams>
+  </places>
+  <arcs xsi:type="MultiClassQPN:TransToPlaceArc" target="//@places.0"/>
+  <colors name="Workload1"/>
+</MultiClassQPN:QPN>

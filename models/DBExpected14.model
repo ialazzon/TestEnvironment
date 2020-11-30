@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DB:Database xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB="DB">
+  <contents xsi:type="DB:Table" name="Student" primaryKeys="//@contents.0/@columns.0">
+    <columns name="studentId" type="INT"/>
+    <columns name="personId" type="INT"/>
+    <columns name="grade" type="NUMBER"/>
+  </contents>
+  <contents xsi:type="DB:Table" name="Person" primaryKeys="//@contents.1/@columns.0">
+    <columns name="personId" type="INT"/>
+    <columns name="details" type="NVARCHAR"/>
+  </contents>
+  <contents xsi:type="DB:ForeignKey" name="StudentExtendsPerson" parent="//@contents.1/@columns.0" child="//@contents.0/@columns.1"/>
+  <contents xsi:type="DB:Table" name="Employee" primaryKeys="//@contents.3/@columns.0">
+    <columns name="employeeId" type="INT"/>
+    <columns name="personId" type="INT"/>
+    <columns name="salary" type="NUMBER"/>
+  </contents>
+  <contents xsi:type="DB:ForeignKey" name="EmployeeExtendsPerson" parent="//@contents.1/@columns.0" child="//@contents.3/@columns.1"/>
+  <contents xsi:type="DB:Table" name="Teacher" primaryKeys="//@contents.5/@columns.0">
+    <columns name="teacherId" type="INT"/>
+    <columns name="employeeId" type="INT"/>
+  </contents>
+  <contents xsi:type="DB:ForeignKey" name="TeacherExtendsEmployee" parent="//@contents.3/@columns.0" child="//@contents.5/@columns.1"/>
+</DB:Database>

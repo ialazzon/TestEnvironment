@@ -1,0 +1,979 @@
+<project default="run-tests">
+
+	<property name="metamodels.location" location="${basedir}/metamodels" />
+	<property name="BibTeX.metamodel.location" location="${metamodels.location}/BibTeX.ecore" />
+	<property name="DocBook.metamodel.location" location="${metamodels.location}/DocBook.ecore" />
+	<property name="DocBook.metamodel.uri" value="http://DocBook/1.0" />
+	<property name="BibTeX.metamodel.uri" value="http://BibTeX/1.0" />
+
+	<target name="run-tests">
+		<!--
+		 Note: when comparing models with EUnit, avoid using metamodelfile in the epsilon.emf.loadModel task!
+		 It will result in each model having a different EPackage instance, producing unwanted differences
+		 in assertEqualModels.
+		 -->
+		<epsilon.emf.register file="${BibTeX.metamodel.location}"/>
+		<epsilon.emf.register file="${DocBook.metamodel.location}"/>
+		
+		<epsilon.eunit src="tests/atl3.eunit">
+			<modelTasks>
+				<epsilon.emf.loadModel
+					name="BibTeX84" modelfile="models/AutomaticModel_BibTex84.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook84" modelfile="models/Output_DocBook84.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX65" modelfile="models/AutomaticModel_BibTex65.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook65" modelfile="models/Output_DocBook65.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX30" modelfile="models/AutomaticModel_BibTex30.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook30" modelfile="models/Output_DocBook30.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX39" modelfile="models/AutomaticModel_BibTex39.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook39" modelfile="models/Output_DocBook39.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX48" modelfile="models/AutomaticModel_BibTex48.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook48" modelfile="models/Output_DocBook48.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX37" modelfile="models/AutomaticModel_BibTex37.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook37" modelfile="models/Output_DocBook37.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX98" modelfile="models/AutomaticModel_BibTex98.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook98" modelfile="models/Output_DocBook98.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX25" modelfile="models/AutomaticModel_BibTex25.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook25" modelfile="models/Output_DocBook25.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX13" modelfile="models/AutomaticModel_BibTex13.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook13" modelfile="models/Output_DocBook13.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX80" modelfile="models/AutomaticModel_BibTex80.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook80" modelfile="models/Output_DocBook80.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX21" modelfile="models/AutomaticModel_BibTex21.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook21" modelfile="models/Output_DocBook21.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX11" modelfile="models/AutomaticModel_BibTex11.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook11" modelfile="models/Output_DocBook11.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX51" modelfile="models/AutomaticModel_BibTex51.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook51" modelfile="models/Output_DocBook51.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX91" modelfile="models/AutomaticModel_BibTex91.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook91" modelfile="models/Output_DocBook91.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX5" modelfile="models/AutomaticModel_BibTex5.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook5" modelfile="models/Output_DocBook5.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX85" modelfile="models/AutomaticModel_BibTex85.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook85" modelfile="models/Output_DocBook85.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX97" modelfile="models/AutomaticModel_BibTex97.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook97" modelfile="models/Output_DocBook97.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX76" modelfile="models/AutomaticModel_BibTex76.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook76" modelfile="models/Output_DocBook76.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX61" modelfile="models/AutomaticModel_BibTex61.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook61" modelfile="models/Output_DocBook61.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX56" modelfile="models/AutomaticModel_BibTex56.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook56" modelfile="models/Output_DocBook56.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX53" modelfile="models/AutomaticModel_BibTex53.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook53" modelfile="models/Output_DocBook53.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX67" modelfile="models/AutomaticModel_BibTex67.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook67" modelfile="models/Output_DocBook67.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX36" modelfile="models/AutomaticModel_BibTex36.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook36" modelfile="models/Output_DocBook36.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX52" modelfile="models/AutomaticModel_BibTex52.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook52" modelfile="models/Output_DocBook52.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="BibTeX58" modelfile="models/AutomaticModel_BibTex58.xmi"
+					metamodeluri="${BibTeX.metamodel.uri}" read="true" store="false" />
+				<epsilon.emf.loadModel
+					name="Output_DocBook58" modelfile="models/Output_DocBook58.xmi"
+					metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />				
+			</modelTasks>
+		</epsilon.eunit>
+	</target>
+
+
+	
+	<target name="atl84">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile84" />
+				<tempfile property="atl.temp.dstfile84" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX84" target="${atl.temp.srcfile84}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX84m"   metamodel="BibTeX" path="${atl.temp.srcfile84}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX84m" />
+					<outmodel name="OUT" model="DocBook84" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook84" path="${atl.temp.dstfile84}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook84"
+					modelfile="${atl.temp.dstfile84}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile84}" />
+			<delete file="${atl.temp.dstfile84}" />
+
+			</target>
+			<target name="atl65">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile65" />
+				<tempfile property="atl.temp.dstfile65" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX65" target="${atl.temp.srcfile65}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX65m"   metamodel="BibTeX" path="${atl.temp.srcfile65}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX65m" />
+					<outmodel name="OUT" model="DocBook65" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook65" path="${atl.temp.dstfile65}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook65"
+					modelfile="${atl.temp.dstfile65}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile65}" />
+			<delete file="${atl.temp.dstfile65}" />
+
+			</target>
+			<target name="atl30">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile30" />
+				<tempfile property="atl.temp.dstfile30" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX30" target="${atl.temp.srcfile30}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX30m"   metamodel="BibTeX" path="${atl.temp.srcfile30}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX30m" />
+					<outmodel name="OUT" model="DocBook30" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook30" path="${atl.temp.dstfile30}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook30"
+					modelfile="${atl.temp.dstfile30}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile30}" />
+			<delete file="${atl.temp.dstfile30}" />
+
+			</target>
+			<target name="atl39">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile39" />
+				<tempfile property="atl.temp.dstfile39" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX39" target="${atl.temp.srcfile39}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX39m"   metamodel="BibTeX" path="${atl.temp.srcfile39}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX39m" />
+					<outmodel name="OUT" model="DocBook39" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook39" path="${atl.temp.dstfile39}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook39"
+					modelfile="${atl.temp.dstfile39}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile39}" />
+			<delete file="${atl.temp.dstfile39}" />
+
+			</target>
+			<target name="atl48">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile48" />
+				<tempfile property="atl.temp.dstfile48" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX48" target="${atl.temp.srcfile48}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX48m"   metamodel="BibTeX" path="${atl.temp.srcfile48}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX48m" />
+					<outmodel name="OUT" model="DocBook48" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook48" path="${atl.temp.dstfile48}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook48"
+					modelfile="${atl.temp.dstfile48}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile48}" />
+			<delete file="${atl.temp.dstfile48}" />
+
+			</target>
+			<target name="atl37">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile37" />
+				<tempfile property="atl.temp.dstfile37" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX37" target="${atl.temp.srcfile37}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX37m"   metamodel="BibTeX" path="${atl.temp.srcfile37}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX37m" />
+					<outmodel name="OUT" model="DocBook37" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook37" path="${atl.temp.dstfile37}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook37"
+					modelfile="${atl.temp.dstfile37}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile37}" />
+			<delete file="${atl.temp.dstfile37}" />
+
+			</target>
+			<target name="atl98">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile98" />
+				<tempfile property="atl.temp.dstfile98" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX98" target="${atl.temp.srcfile98}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX98m"   metamodel="BibTeX" path="${atl.temp.srcfile98}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX98m" />
+					<outmodel name="OUT" model="DocBook98" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook98" path="${atl.temp.dstfile98}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook98"
+					modelfile="${atl.temp.dstfile98}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile98}" />
+			<delete file="${atl.temp.dstfile98}" />
+
+			</target>
+			<target name="atl25">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile25" />
+				<tempfile property="atl.temp.dstfile25" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX25" target="${atl.temp.srcfile25}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX25m"   metamodel="BibTeX" path="${atl.temp.srcfile25}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX25m" />
+					<outmodel name="OUT" model="DocBook25" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook25" path="${atl.temp.dstfile25}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook25"
+					modelfile="${atl.temp.dstfile25}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile25}" />
+			<delete file="${atl.temp.dstfile25}" />
+
+			</target>
+			<target name="atl13">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile13" />
+				<tempfile property="atl.temp.dstfile13" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX13" target="${atl.temp.srcfile13}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX13m"   metamodel="BibTeX" path="${atl.temp.srcfile13}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX13m" />
+					<outmodel name="OUT" model="DocBook13" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook13" path="${atl.temp.dstfile13}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook13"
+					modelfile="${atl.temp.dstfile13}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile13}" />
+			<delete file="${atl.temp.dstfile13}" />
+
+			</target>
+			<target name="atl80">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile80" />
+				<tempfile property="atl.temp.dstfile80" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX80" target="${atl.temp.srcfile80}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX80m"   metamodel="BibTeX" path="${atl.temp.srcfile80}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX80m" />
+					<outmodel name="OUT" model="DocBook80" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook80" path="${atl.temp.dstfile80}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook80"
+					modelfile="${atl.temp.dstfile80}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile80}" />
+			<delete file="${atl.temp.dstfile80}" />
+
+			</target>
+			<target name="atl21">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile21" />
+				<tempfile property="atl.temp.dstfile21" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX21" target="${atl.temp.srcfile21}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX21m"   metamodel="BibTeX" path="${atl.temp.srcfile21}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX21m" />
+					<outmodel name="OUT" model="DocBook21" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook21" path="${atl.temp.dstfile21}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook21"
+					modelfile="${atl.temp.dstfile21}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile21}" />
+			<delete file="${atl.temp.dstfile21}" />
+
+			</target>
+			<target name="atl11">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile11" />
+				<tempfile property="atl.temp.dstfile11" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX11" target="${atl.temp.srcfile11}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX11m"   metamodel="BibTeX" path="${atl.temp.srcfile11}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX11m" />
+					<outmodel name="OUT" model="DocBook11" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook11" path="${atl.temp.dstfile11}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook11"
+					modelfile="${atl.temp.dstfile11}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile11}" />
+			<delete file="${atl.temp.dstfile11}" />
+
+			</target>
+			<target name="atl51">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile51" />
+				<tempfile property="atl.temp.dstfile51" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX51" target="${atl.temp.srcfile51}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX51m"   metamodel="BibTeX" path="${atl.temp.srcfile51}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX51m" />
+					<outmodel name="OUT" model="DocBook51" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook51" path="${atl.temp.dstfile51}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook51"
+					modelfile="${atl.temp.dstfile51}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile51}" />
+			<delete file="${atl.temp.dstfile51}" />
+
+			</target>
+			<target name="atl91">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile91" />
+				<tempfile property="atl.temp.dstfile91" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX91" target="${atl.temp.srcfile91}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX91m"   metamodel="BibTeX" path="${atl.temp.srcfile91}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX91m" />
+					<outmodel name="OUT" model="DocBook91" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook91" path="${atl.temp.dstfile91}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook91"
+					modelfile="${atl.temp.dstfile91}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile91}" />
+			<delete file="${atl.temp.dstfile91}" />
+
+			</target>
+			<target name="atl5">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile5" />
+				<tempfile property="atl.temp.dstfile5" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX5" target="${atl.temp.srcfile5}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX5m"   metamodel="BibTeX" path="${atl.temp.srcfile5}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX5m" />
+					<outmodel name="OUT" model="DocBook5" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook5" path="${atl.temp.dstfile5}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook5"
+					modelfile="${atl.temp.dstfile5}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile5}" />
+			<delete file="${atl.temp.dstfile5}" />
+
+			</target>
+			<target name="atl85">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile85" />
+				<tempfile property="atl.temp.dstfile85" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX85" target="${atl.temp.srcfile85}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX85m"   metamodel="BibTeX" path="${atl.temp.srcfile85}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX85m" />
+					<outmodel name="OUT" model="DocBook85" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook85" path="${atl.temp.dstfile85}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook85"
+					modelfile="${atl.temp.dstfile85}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile85}" />
+			<delete file="${atl.temp.dstfile85}" />
+
+			</target>
+			<target name="atl97">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile97" />
+				<tempfile property="atl.temp.dstfile97" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX97" target="${atl.temp.srcfile97}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX97m"   metamodel="BibTeX" path="${atl.temp.srcfile97}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX97m" />
+					<outmodel name="OUT" model="DocBook97" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook97" path="${atl.temp.dstfile97}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook97"
+					modelfile="${atl.temp.dstfile97}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile97}" />
+			<delete file="${atl.temp.dstfile97}" />
+
+			</target>
+			<target name="atl76">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile76" />
+				<tempfile property="atl.temp.dstfile76" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX76" target="${atl.temp.srcfile76}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX76m"   metamodel="BibTeX" path="${atl.temp.srcfile76}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX76m" />
+					<outmodel name="OUT" model="DocBook76" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook76" path="${atl.temp.dstfile76}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook76"
+					modelfile="${atl.temp.dstfile76}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile76}" />
+			<delete file="${atl.temp.dstfile76}" />
+
+			</target>
+			<target name="atl61">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile61" />
+				<tempfile property="atl.temp.dstfile61" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX61" target="${atl.temp.srcfile61}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX61m"   metamodel="BibTeX" path="${atl.temp.srcfile61}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX61m" />
+					<outmodel name="OUT" model="DocBook61" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook61" path="${atl.temp.dstfile61}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook61"
+					modelfile="${atl.temp.dstfile61}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile61}" />
+			<delete file="${atl.temp.dstfile61}" />
+
+			</target>
+			<target name="atl56">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile56" />
+				<tempfile property="atl.temp.dstfile56" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX56" target="${atl.temp.srcfile56}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX56m"   metamodel="BibTeX" path="${atl.temp.srcfile56}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX56m" />
+					<outmodel name="OUT" model="DocBook56" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook56" path="${atl.temp.dstfile56}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook56"
+					modelfile="${atl.temp.dstfile56}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile56}" />
+			<delete file="${atl.temp.dstfile56}" />
+
+			</target>
+			<target name="atl53">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile53" />
+				<tempfile property="atl.temp.dstfile53" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX53" target="${atl.temp.srcfile53}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX53m"   metamodel="BibTeX" path="${atl.temp.srcfile53}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX53m" />
+					<outmodel name="OUT" model="DocBook53" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook53" path="${atl.temp.dstfile53}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook53"
+					modelfile="${atl.temp.dstfile53}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile53}" />
+			<delete file="${atl.temp.dstfile53}" />
+
+			</target>
+			<target name="atl67">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile67" />
+				<tempfile property="atl.temp.dstfile67" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX67" target="${atl.temp.srcfile67}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX67m"   metamodel="BibTeX" path="${atl.temp.srcfile67}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX67m" />
+					<outmodel name="OUT" model="DocBook67" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook67" path="${atl.temp.dstfile67}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook67"
+					modelfile="${atl.temp.dstfile67}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile67}" />
+			<delete file="${atl.temp.dstfile67}" />
+
+			</target>
+			<target name="atl36">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile36" />
+				<tempfile property="atl.temp.dstfile36" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX36" target="${atl.temp.srcfile36}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX36m"   metamodel="BibTeX" path="${atl.temp.srcfile36}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX36m" />
+					<outmodel name="OUT" model="DocBook36" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook36" path="${atl.temp.dstfile36}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook36"
+					modelfile="${atl.temp.dstfile36}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile36}" />
+			<delete file="${atl.temp.dstfile36}" />
+
+			</target>
+			<target name="atl52">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile52" />
+				<tempfile property="atl.temp.dstfile52" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX52" target="${atl.temp.srcfile52}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX52m"   metamodel="BibTeX" path="${atl.temp.srcfile52}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX52m" />
+					<outmodel name="OUT" model="DocBook52" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook52" path="${atl.temp.dstfile52}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook52"
+					modelfile="${atl.temp.dstfile52}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile52}" />
+			<delete file="${atl.temp.dstfile52}" />
+
+			</target>
+			<target name="atl58">
+				<!-- Create temporary files for input and output models -->
+				<tempfile property="atl.temp.srcfile58" />
+				<tempfile property="atl.temp.dstfile58" />
+
+
+				<!-- Save input model to a file -->
+				<epsilon.storeModel model="BibTeX58" target="${atl.temp.srcfile58}" />
+
+				<!-- Load the metamodels and the source model -->
+				<atl.loadModel name="BibTeX"   metamodel="MOF" path="metamodels/BibTeX.ecore" />
+				<atl.loadModel name="DocBook"  metamodel="MOF" path="metamodels/DocBook.ecore" />
+				<atl.loadModel name="BibTeX58m"   metamodel="BibTeX" path="${atl.temp.srcfile58}" />
+
+				<!-- Run ATL and save the model -->
+				<atl.launch path="transformation/BibTeX2DocBook.atl">
+					<inmodel name="IN"   model="BibTeX58m" />
+					<outmodel name="OUT" model="DocBook58" metamodel="DocBook" />
+				</atl.launch>
+		                
+				<atl.saveModel model="DocBook58" path="${atl.temp.dstfile58}" derived="false" />
+				
+				<!-- Load it back into the EUnit suite -->
+				<epsilon.emf.loadModel name="DocBook58"
+					modelfile="${atl.temp.dstfile58}" metamodeluri="${DocBook.metamodel.uri}" read="true" store="false" />
+				
+
+			<!--Delete temporary files -->
+			<delete file="${atl.temp.srcfile58}" />
+			<delete file="${atl.temp.dstfile58}" />
+
+			</target>
+
+	
+	
+</project>

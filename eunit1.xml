@@ -1,0 +1,439 @@
+<?xml version="1.0"?> 
+
+<!--
+	The following build script illustrates how to launch the example via ANT.
+	Ensure that External Tools Configuration specifies that the JRE to be used
+	is the same as the workspace.
+		1) Click External Tools Configuration... from the External Tools dropdown.
+		2) Select the ANT build for this build script.
+		3) Click the JRE tab.
+		4) Select the option that reads: "Run in the same JRE as the workspace."
+		5) Click Apply.
+		6) Click Run.
+-->
+
+<project default="with-model-refs">
+	
+	<target name="with-model-refs" description="Loads models using standard executable module references">
+			<!--
+			  When loading models for comparison in EUnit, it's better not to use "metamodelfile",
+			  to avoid having multiple instances of the same EMF package and confusing EMF Compare.
+			-->
+			<epsilon.emf.register file="${basedir}/metamodels/OO.ecore"/>
+			<epsilon.emf.register file="${basedir}/metamodels/DB.ecore"/>
+			<epsilon.emf.register file="${basedir}/metamodels/TM.ecore"/>
+			
+		<epsilon.emf.loadModel name="OO1"
+		          	modelFile="models/OO1.model"
+		           	metamodelUri="OO"
+					read="true" store="false"/>	
+						
+		<epsilon.emf.loadModel name="DBExpected1"
+		            modelFile="models/DBExpected1.model"
+		            metamodelUri="DB"
+		            read="true" store="false"/>
+						
+		<epsilon.emf.loadModel name="DB1"
+		            modelFile="models/DB1.model"
+		            metamodelUri="DB"
+		            read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO2DB"
+		            modelFile="models/OO2DB.model"
+		            metamodelUri="TM"
+		            read="true" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO2"
+				          	modelFile="models/OO2.model"
+				           	metamodelUri="OO"
+							read="true" store="false"/>	
+								
+		<epsilon.emf.loadModel name="DBExpected2"
+				            modelFile="models/DBExpected2.model"
+				            metamodelUri="DB"
+				            read="true" store="false"/>
+								
+		<epsilon.emf.loadModel name="DB2"
+				            modelFile="models/DB2.model"
+				            metamodelUri="DB"
+				            read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO3"
+						          	modelFile="models/OO3.model"
+						           	metamodelUri="OO"
+									read="true" store="false"/>	
+										
+		<epsilon.emf.loadModel name="DBExpected3"
+						            modelFile="models/DBExpected3.model"
+						            metamodelUri="DB"
+						            read="true" store="false"/>
+										
+		<epsilon.emf.loadModel name="DB3"
+						            modelFile="models/DB3.model"
+						            metamodelUri="DB"
+						            read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO4"
+								          	modelFile="models/OO4.model"
+								           	metamodelUri="OO"
+											read="true" store="false"/>	
+												
+		<epsilon.emf.loadModel name="DBExpected4"
+								            modelFile="models/DBExpected4.model"
+								            metamodelUri="DB"
+								            read="true" store="false"/>
+												
+		<epsilon.emf.loadModel name="DB4"
+								            modelFile="models/DB4.model"
+								            metamodelUri="DB"
+								            read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO5"
+										          	modelFile="models/OO5.model"
+										           	metamodelUri="OO"
+													read="true" store="false"/>	
+														
+		<epsilon.emf.loadModel name="DBExpected5"
+										            modelFile="models/DBExpected5.model"
+										            metamodelUri="DB"
+										            read="true" store="false"/>
+														
+		<epsilon.emf.loadModel name="DB5"
+										            modelFile="models/DB5.model"
+										            metamodelUri="DB"
+										            read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO6"
+												          	modelFile="models/OO6.model"
+												           	metamodelUri="OO"
+															read="true" store="false"/>	
+																
+		<epsilon.emf.loadModel name="DBExpected6"
+												            modelFile="models/DBExpected6.model"
+												            metamodelUri="DB"
+												            read="true" store="false"/>
+																
+		<epsilon.emf.loadModel name="DB6"
+												            modelFile="models/DB6.model"
+												            metamodelUri="DB"
+												            read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO7"
+														    modelFile="models/OO7.model"
+														    metamodelUri="OO"
+															read="true" store="false"/>	
+																		
+		<epsilon.emf.loadModel name="DBExpected7"
+														    modelFile="models/DBExpected7.model"
+														    metamodelUri="DB"
+														    read="true" store="false"/>
+																		
+		<epsilon.emf.loadModel name="DB7"
+														    modelFile="models/DB7.model"
+														    metamodelUri="DB"
+														    read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO8"
+															modelFile="models/OO8.model"
+															metamodelUri="OO"
+															read="true" store="false"/>	
+																				
+		<epsilon.emf.loadModel name="DBExpected8"
+															modelFile="models/DBExpected8.model"
+															metamodelUri="DB"
+															read="true" store="false"/>
+																				
+		<epsilon.emf.loadModel name="DB8"
+															modelFile="models/DB8.model"
+															metamodelUri="DB"
+															read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO9"
+																	modelFile="models/OO9.model"
+																	metamodelUri="OO"
+																	read="true" store="false"/>	
+																						
+		<epsilon.emf.loadModel name="DBExpected9"
+																	modelFile="models/DBExpected9.model"
+																	metamodelUri="DB"
+																	read="true" store="false"/>
+																						
+		<epsilon.emf.loadModel name="DB9"
+																	modelFile="models/DB9.model"
+																	metamodelUri="DB"
+																	read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO10"
+																			modelFile="models/OO10.model"
+																			metamodelUri="OO"
+																			read="true" store="false"/>	
+																								
+		<epsilon.emf.loadModel name="DBExpected10"
+																			modelFile="models/DBExpected10.model"
+																			metamodelUri="DB"
+																			read="true" store="false"/>
+																								
+		<epsilon.emf.loadModel name="DB10"
+																			modelFile="models/DB10.model"
+																			metamodelUri="DB"
+																			read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO11"
+																					modelFile="models/OO11.model"
+																					metamodelUri="OO"
+																					read="true" store="false"/>	
+																										
+				<epsilon.emf.loadModel name="DBExpected11"
+																					modelFile="models/DBExpected11.model"
+																					metamodelUri="DB"
+																					read="true" store="false"/>
+																										
+				<epsilon.emf.loadModel name="DB11"
+																					modelFile="models/DB11.model"
+																					metamodelUri="DB"
+																					read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO12"
+																							modelFile="models/OO12.model"
+																							metamodelUri="OO"
+																							read="true" store="false"/>	
+																												
+						<epsilon.emf.loadModel name="DBExpected12"
+																							modelFile="models/DBExpected12.model"
+																							metamodelUri="DB"
+																							read="true" store="false"/>
+																												
+						<epsilon.emf.loadModel name="DB12"
+																							modelFile="models/DB12.model"
+																							metamodelUri="DB"
+																							read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO13"
+										modelFile="models/OO13.model"
+										metamodelUri="OO"
+										read="true" store="false"/>	
+																														
+		<epsilon.emf.loadModel name="DBExpected13"
+										modelFile="models/DBExpected13.model"
+										metamodelUri="DB"
+										read="true" store="false"/>
+																														
+		<epsilon.emf.loadModel name="DB13"
+										modelFile="models/DB13.model"
+										metamodelUri="DB"
+										read="false" store="false"/>
+		
+		<epsilon.emf.loadModel name="OO14"
+												modelFile="models/OO14.model"
+												metamodelUri="OO"
+												read="true" store="false"/>	
+																																
+		<epsilon.emf.loadModel name="DBExpected14"
+												modelFile="models/DBExpected14.model"
+												metamodelUri="DB"
+												read="true" store="false"/>
+																																
+		<epsilon.emf.loadModel name="DB14"
+												modelFile="models/DB14.model"
+												metamodelUri="DB"
+												read="false" store="false"/>
+		
+		
+		<epsilon.emf.loadModel name="OO15"
+														modelFile="models/OO15.model"
+														metamodelUri="OO"
+														read="true" store="false"/>	
+																																		
+				<epsilon.emf.loadModel name="DBExpected15"
+														modelFile="models/DBExpected15.model"
+														metamodelUri="DB"
+														read="true" store="false"/>
+																																		
+				<epsilon.emf.loadModel name="DB15"
+														modelFile="models/DB15.model"
+														metamodelUri="DB"
+														read="false" store="false"/>
+		
+		
+			
+			
+
+			<!-- EUnit will dispose and reload the referred models as needed -->
+			<epsilon.eunit src="tests/etl1.eunit" >
+				<model ref="OO2DB"/>
+				<model ref="OO1" />
+				<model ref="DBExpected1"  />
+				<model ref="DB1"  />
+				<model ref="DBExpected2"  />
+				<model ref="OO2" />
+				<model ref="DB2"  />
+				<model ref="DBExpected3"  />
+				<model ref="OO3" />
+				<model ref="DB3"  />
+				<model ref="DBExpected4"  />
+				<model ref="OO4" />
+				<model ref="DB4"  />
+				<model ref="DBExpected5"  />
+				<model ref="OO5" />
+				<model ref="DB5"  />
+				<model ref="DBExpected6"  />
+				<model ref="OO6" />
+				<model ref="DB6"  />
+				<model ref="DBExpected7"  />
+				<model ref="OO7" />
+				<model ref="DB7"  />
+				<model ref="DBExpected8"  />
+				<model ref="OO8" />
+				<model ref="DB8"  />
+				<model ref="DBExpected9"  />
+				<model ref="OO9" />
+				<model ref="DB9"  />
+				<model ref="DBExpected10"  />
+				<model ref="OO10" />
+				<model ref="DB10"  />
+				<model ref="DBExpected11"  />
+				<model ref="OO11" />
+				<model ref="DB11"  />
+				<model ref="DBExpected12"  />
+				<model ref="OO12" />
+				<model ref="DB12"  />
+				<model ref="DBExpected13"  />
+				<model ref="OO13" />
+				<model ref="DB13"  />
+				<model ref="DBExpected14"  />
+				<model ref="OO14" />
+				<model ref="DB14"  />
+				<model ref="DBExpected15"  />
+				<model ref="OO15" />
+				<model ref="DB15"  />
+				
+			</epsilon.eunit>
+		</target>
+	
+
+	
+		
+	<target name="OO2DB1">
+		<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+				<model ref="OO1" as="OO" />
+				<model ref="DB1"  as="DB"/>
+				<model ref="OO2DB" as="OO2DB"/>
+			</epsilon.etl>
+		</target>
+	
+	<target name="OO2DB2">
+			<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+					<model ref="OO2" as="OO" />
+					<model ref="DB2"  as="DB"/>
+					<model ref="OO2DB" as="OO2DB"/>
+				</epsilon.etl>
+			</target>
+	
+	<target name="OO2DB3">
+				<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+						<model ref="OO3" as="OO" />
+						<model ref="DB3"  as="DB"/>
+						<model ref="OO2DB" as="OO2DB"/>
+					</epsilon.etl>
+				</target>
+	
+	<target name="OO2DB4">
+					<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+							<model ref="OO4" as="OO" />
+							<model ref="DB4"  as="DB"/>
+							<model ref="OO2DB" as="OO2DB"/>
+						</epsilon.etl>
+					</target>
+	
+	<target name="OO2DB5">
+						<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+								<model ref="OO5" as="OO" />
+								<model ref="DB5"  as="DB"/>
+								<model ref="OO2DB" as="OO2DB"/>
+							</epsilon.etl>
+						</target>
+	
+	<target name="OO2DB6">
+							<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+									<model ref="OO6" as="OO" />
+									<model ref="DB6"  as="DB"/>
+									<model ref="OO2DB" as="OO2DB"/>
+								</epsilon.etl>
+							</target>
+	
+	<target name="OO2DB7">
+								<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+										<model ref="OO7" as="OO" />
+										<model ref="DB7"  as="DB"/>
+										<model ref="OO2DB" as="OO2DB"/>
+									</epsilon.etl>
+								</target>
+	
+	<target name="OO2DB8">
+									<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+											<model ref="OO8" as="OO" />
+											<model ref="DB8"  as="DB"/>
+											<model ref="OO2DB" as="OO2DB"/>
+										</epsilon.etl>
+									</target>
+	
+	<target name="OO2DB9">
+										<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+												<model ref="OO9" as="OO" />
+												<model ref="DB9"  as="DB"/>
+												<model ref="OO2DB" as="OO2DB"/>
+											</epsilon.etl>
+										</target>
+	
+	<target name="OO2DB10">
+											<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+													<model ref="OO10" as="OO" />
+													<model ref="DB10"  as="DB"/>
+													<model ref="OO2DB" as="OO2DB"/>
+												</epsilon.etl>
+											</target>
+
+	<target name="OO2DB11">
+												<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+														<model ref="OO11" as="OO" />
+														<model ref="DB11"  as="DB"/>
+														<model ref="OO2DB" as="OO2DB"/>
+													</epsilon.etl>
+												</target>
+	
+	<target name="OO2DB12">
+													<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+															<model ref="OO12" as="OO" />
+															<model ref="DB12"  as="DB"/>
+															<model ref="OO2DB" as="OO2DB"/>
+														</epsilon.etl>
+													</target>
+	
+	<target name="OO2DB13">
+				<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+							<model ref="OO13" as="OO" />
+							<model ref="DB13"  as="DB"/>
+							<model ref="OO2DB" as="OO2DB"/>
+				</epsilon.etl>
+	</target>
+	
+	<target name="OO2DB14">
+					<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+								<model ref="OO14" as="OO" />
+								<model ref="DB14"  as="DB"/>
+								<model ref="OO2DB" as="OO2DB"/>
+					</epsilon.etl>
+	</target>
+	
+	<target name="OO2DB15">
+						<epsilon.etl src="transformation/OO2DB2_no_trace.etl" >
+									<model ref="OO15" as="OO" />
+									<model ref="DB15"  as="DB"/>
+									<model ref="OO2DB" as="OO2DB"/>
+						</epsilon.etl>
+		</target>
+	
+	
+	
+</project>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MultiClassQPN:QPN xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MultiClassQPN="MultiClassQPN">
+  <places xsi:type="MultiClassQPN:QueueingPlace" incoming="//@arcs.5" outgoing="//@arcs.0" name="Server1" color="Workload1" serviceDemand="//@serviceDemands.0"/>
+  <places xsi:type="MultiClassQPN:QueueingPlace" incoming="//@arcs.3" outgoing="//@arcs.1" name="ThinkDevice1" numOfTokens="10" color="Workload1" schedulingPolicy="IS" serviceDistribution="Exponential">
+    <serviceParams>0.0</serviceParams>
+  </places>
+  <places xsi:type="MultiClassQPN:OrdinaryPlace" incoming="//@arcs.4" outgoing="//@arcs.2" name="NonServerNode1" numOfTokens="10" color="Workload1"/>
+  <transitions incoming="//@arcs.0" outgoing="//@arcs.3" mode="//@modes.0"/>
+  <transitions incoming="//@arcs.1" outgoing="//@arcs.4" mode="//@modes.1"/>
+  <transitions incoming="//@arcs.2" outgoing="//@arcs.5" mode="//@modes.2"/>
+  <arcs xsi:type="MultiClassQPN:PlaceToTransArc" source="//@places.0" target="//@transitions.0"/>
+  <arcs xsi:type="MultiClassQPN:PlaceToTransArc" source="//@places.1" target="//@transitions.1"/>
+  <arcs xsi:type="MultiClassQPN:PlaceToTransArc" source="//@places.2" target="//@transitions.2"/>
+  <arcs xsi:type="MultiClassQPN:TransToPlaceArc" source="//@transitions.0" target="//@places.1"/>
+  <arcs xsi:type="MultiClassQPN:TransToPlaceArc" source="//@transitions.1" target="//@places.2"/>
+  <arcs xsi:type="MultiClassQPN:TransToPlaceArc" source="//@transitions.2" target="//@places.0"/>
+  <colors name="Workload1" serviceDemand="//@serviceDemands.0" mode="//@modes.0 //@modes.1 //@modes.2"/>
+  <serviceDemands serviceDistribution="Poisson" queueingPlace="//@places.0" color="Workload1">
+    <serviceParams>2.0</serviceParams>
+  </serviceDemands>
+  <modes weight="1.0" transition="//@transitions.0" color="Workload1"/>
+  <modes weight="1.0" transition="//@transitions.1" color="Workload1"/>
+  <modes weight="1.0" transition="//@transitions.2" color="Workload1"/>
+</MultiClassQPN:QPN>

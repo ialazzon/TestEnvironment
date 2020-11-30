@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DB:Database xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DB="DB">
+  <contents xsi:type="DB:Table" name="School" primaryKeys="//@contents.0/@columns.0">
+    <columns name="schoolId" type="INT"/>
+    <columns name="address" type="NVARCHAR"/>
+  </contents>
+</DB:Database>
